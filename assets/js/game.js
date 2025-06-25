@@ -15,17 +15,17 @@ let pontos = 0;
 let currentTime = 0;
 
 const characters = [
- "1",
- "2",
- "3",
- "4",
- "5",
- "6",
- "7",
- "8",
- "9",
- "10",
- 
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+
 ];
 
 const createElement = (tag, className) => {
@@ -40,11 +40,30 @@ let secondCard = '';
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
-  if (disabledCards.length === 20) {
+  if (disabledCards.length === 2) {
     clearInterval(this.loop);
-    alert(`Parabéns, ${spanPlayer.innerHTML}!
-    Seu tempo foi de: ${timer.innerHTML} segundos.
-    Pontuação: ${ spanPoints.innerHTML} pontos`);
+
+    setTimeout(() => {
+      alert(`
+        Parabéns, ${spanPlayer.innerHTML}!
+        Seu tempo foi de: ${timer.innerHTML} segundos.
+        Pontuação: ${spanPoints.innerHTML} pontos
+        `);
+
+      pontos = 0;
+      currentTime = 0;
+
+      const dialogo = confirm("Quer jogar novamente?");
+
+      if (dialogo) {
+        window.location.reload();
+      } else {
+        window.location.href = "../index.html";
+      }
+    }, 1000);
+
+
+
   }
 }
 
@@ -55,7 +74,7 @@ const checkCards = () => {
 
   if (firstCharacter === secondCharacter) {
 
-    pontos  += 10;
+    pontos += 10;
 
     firstCard.firstChild.classList.add('disabled-card');
     secondCard.firstChild.classList.add('disabled-card');
@@ -134,8 +153,8 @@ const startTimer = () => {
 
   this.loop = setInterval(() => {
     spanPoints.innerHTML = pontos;
-    
-   
+
+
     timer.innerHTML = currentTime++;
   }, 1000);
 
