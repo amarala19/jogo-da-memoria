@@ -1,0 +1,78 @@
+* {
+    /* coloque a propiedade margin com o valor 0 */
+    margin: 0;
+    /* coloque a propiedade padding com o valor 0 */
+    padding: 0;
+    /* coloque a propiedade box-sizing com o valor border-box */
+    box-sizing: border-box;
+    /* coloque a propiedade text-decoration com o valor none */
+    text-decoration: none;
+    /* coloque a propiedade list-style com o valor none */
+    list-style: none;
+}
+
+body {
+    background: url("../img/name-01.jpg") no-repeat center ;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 4px groove;
+}
+
+h1 {
+    color: rgba(190, 10, 250, 0.769);
+   text-shadow: 4px 4px black, 6px 6px white;
+   margin: 2rem 0;
+   font-size: 3rem;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    border: 2px solid rgba(190, 10, 250, 0.769);
+    padding: .7rem;
+    border-radius: 8px;
+    color: rgba(190, 10, 250, 0.769);
+    outline-color: rgba(190, 10, 250, 0.769);
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: .7rem;
+    max-width: 350px;
+    border-radius: 8px;
+    background-color: rgba(190, 10, 250, 0.769);
+    color: black;
+    text-shadow: 1px 1px black;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:disabled {
+
+    background-color: #c2c2c2;
+    color: #7b7b7b;
+    cursor: auto;
+}
